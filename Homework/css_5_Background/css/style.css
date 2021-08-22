@@ -1,0 +1,112 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+body {
+  width: 1440px;
+  height: 1700px;
+  background: #e8e8e8 url("../img/bglines.png") 142px 106px no-repeat;
+  font-family: Arial;
+  padding: 168px 0 0 0;
+}
+
+
+
+  .button>button {
+  	padding: 0 0 0 30px;
+  	width: 199px;
+  	height: 44px;
+    box-shadow: 0px 6px 40px 0px rgba(128,183,179,0.54);
+    background: #80b7b3 url("../img/arrow.png") 151px 50%/21px 14px no-repeat;
+    border-radius: 22px;
+
+  	text-transform: uppercase;
+  	text-align: left;
+  	color: #ffffff;
+  	font-size: 14px;
+  	line-height: 40px;
+  	font-weight: 400;
+  	letter-spacing: 0.2em;
+}
+
+.header {
+  margin: 0 0 0 671px;
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #273d46;
+}
+
+.text1 {
+  margin: 28px 372px 0 347px;
+  text-align: center;
+  font-family: 'Times New Roman';
+  font-size: 36px;
+  line-height: 50px;
+  font-weight: 400;
+  color: #273d46;
+}
+
+.image {
+  margin: 77px 0 0 289px;
+  border: 10px solid #ffffff;
+  width: 841px;
+  height: 561px;
+  background: url("../img/man.png") 0 0/100% 100% no-repeat;
+}
+
+.text2 {
+  margin: 97px 370px 0 334px;
+
+  opacity: 0.8;
+  font-family: 'Times New Roman';
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #273d46;
+}
+
+.list {
+  margin: 52px 0 0 331px;
+}
+.list>li {
+  background: url("../img/check.png")0 50%/25px 19px no-repeat;
+  padding: 0 0 0 36px;
+  font-family: Arial;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 400;
+}
+.list>li:nth-child(2) {
+  font-style: italic;
+  color: #80b7b3;
+}
+.list>li:nth-child(3) {
+  font-weight: 700;
+  color: #273d46;
+}
+.list>li:nth-child(4) {
+  text-decoration: line-through;
+  color: #b0b7b9;
+}
+
+.button {
+  margin: 59px 0 0 330px;
+}

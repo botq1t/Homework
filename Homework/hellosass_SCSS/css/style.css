@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  width: 1440px;
+  height: 1700px;
+  background: #e8e8e8;
+  font-family: Arial;
+}
+
+.list {
+  margin: 163px 0 0 326px;
+  font-size: 20px;
+  line-height: 36px;
+  color: #273d46;
+}
+.list il {
+  display: block;
+  position: relative;
+}
+.list il::before {
+  content: "";
+  background: url("../../img/li1.webp") no-repeat;
+  width: 25px;
+  height: 19px;
+  display: inline-block;
+  position: absolute;
+  left: -35px;
+  top: 8px;
+}
+.list il:nth-child(1) {
+  text-decoration: line-through;
+}
+.list il:nth-child(2) {
+  font-weight: 700;
+}
+.list il:nth-child(3) {
+  font-style: italic;
+}
+.list il:nth-child(4) {
+  text-transform: uppercase;
+}
+.list il:hover {
+  color: #d55a5a;
+}
+.list il:hover:before {
+  background: url("../../img/li2.webp") no-repeat;
+}
+
+.button {
+  margin: 137px 0 0 315px;
+}
+.button button {
+  width: 199px;
+  height: 44px;
+  background: #80b7b3;
+  border-radius: 22px;
+  font-size: 14px;
+  align: left;
+  line-height: 40px;
+  letter-spacing: 2.8px;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+}
+.button button:hover {
+  background: #3a5856;
+}
+.button button:active {
+  background: #818181;
+}
+.button button::after {
+  content: "";
+  background: url("../../img/arrow.svg") no-repeat;
+  display: inline-block;
+  width: 21px;
+  height: 14px;
+  position: relative;
+  top: 2px;
+  left: 10px;
+}
+
+form {
+  margin: 125px 0 0 292px;
+}
+form input {
+  width: 292px;
+  height: 50px;
+  padding: 0 0 0 10px;
+  font-size: 25px;
+}
+form input:focus {
+  -webkit-box-shadow: 0 0 20px 0 rgba(127, 190, 213, 0.93);
+          box-shadow: 0 0 20px 0 rgba(127, 190, 213, 0.93);
+}
+
+.text {
+  margin: 118px 0 0 295px;
+  font-size: 18px;
+  line-height: 1.56;
+}
+.text p {
+  margin: 0 0 43px 0;
+}
+.text p:first-child:first-line {
+  color: #ff0000;
+}
+.text p:last-child:first-letter {
+  color: #ff0000;
+}

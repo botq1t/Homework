@@ -1,0 +1,75 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+%vid {
+  background: rgba(255, 0, 0, 0.15);
+  outline: 1px solid blue;
+}
+
+body {
+  font-family: Arial;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+// .container {
+//   max-width: 500px;
+//   padding: 0 30px;
+//   // margin: 0 auto;
+// }
+
+.header {
+  background: rgba(66, 56, 89, 1);
+  padding: 15px 0;
+	&__title {
+    // text-align: center;
+    padding: 0 0 0 30px;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+    @media (max-width: 768px) {
+      font-size: 40px;
+    }
+	}
+
+}
+
+.list {
+  background: rgba(233, 232, 232, 1);
+  // padding: 0 0 0 30px;
+  flex: 1 1 auto;
+	&__body {
+    display: flex;
+    flex-direction: column;
+	}
+  &__link {
+    background: url("../img/arrow.svg") 25px/40px no-repeat;
+    position: relative;
+    font-size: 30px;
+    padding: 10px 0 10px 70px;
+    letter-spacing: 3px;
+    color: rgb(20, 20, 20);
+    text-shadow: 1px 1px 1px rgb(46, 8, 70);
+    @media (max-width: 768px) {
+      font-size: 23px;
+      background: url("../img/arrow.svg") 25px/30px no-repeat;
+      padding: 10px 0 10px 60px;
+    }
+    &:hover {
+      background: rgba(210, 188, 227, 1) url("../img/arrow.svg") 25px/40px no-repeat;
+      @media (max-width: 768px) {
+        background: rgba(210, 188, 227, 1) url("../img/arrow.svg") 25px/30px no-repeat;
+      }
+    }
+    &:active {
+      background: rgba(172, 150, 189, 1) url("../img/arrow.svg") 25px/40px no-repeat;
+      @media (max-width: 768px) {
+        background: rgba(172, 150, 189, 1) url("../img/arrow.svg") 25px/30px no-repeat;
+      }
+    }
+  }
+}
