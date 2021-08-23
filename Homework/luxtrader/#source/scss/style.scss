@@ -1,0 +1,700 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+// ibg
+@import "ibg.scss";
+// =============== Шрифты =====================
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+
+@font-face {
+	font-family: "Bravo RG";
+	src: url("../fonts/BravoRGRegular.ttf");
+}
+@font-face {
+	font-family: "Ceremonious One";
+	src: url("../fonts/ceremonious_one.ttf");
+}
+@font-face {
+	font-family: "PF Din Text Cond Pro";
+	src: url("../fonts/pfdintextcondpro-medium.ttf");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "PF Din Text Cond Pro";
+	src: url("../fonts/pfdintextcondpro-regular.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Idealist Sans";
+	src: url("fonts/Glen Jan - IdealistSans.eot");
+	src: local("☺"), url("fonts/Glen Jan - IdealistSans.woff") format("woff"),
+		url("fonts/Glen Jan - IdealistSans.ttf") format("truetype"),
+		url("fonts/Glen Jan - IdealistSans.svg") format("svg");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "ALS Rubl";
+	src: url("fonts/rouble.eot");
+	src: local("☺"), url("fonts/rouble.woff") format("woff"), url("fonts/rouble.ttf") format("truetype"),
+		url("fonts/rouble.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+// ============ Миксины ===================
+$maxWidth: 2000;
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+// ============== Стили ===================
+body {
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+.container {
+	max-width: 980px;
+	padding: 0 15px;
+	margin: 0 auto;
+	&_header {
+		@media (max-width: 970px) {
+			min-width: 100%;
+		}
+	}
+}
+
+.page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+// =============== Header ===================
+.header {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 75px;
+	z-index: 10;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: #1c242a;
+		z-index: 1;
+	}
+	&__row {
+		display: flex;
+		align-items: flex-end;
+		width: 100%;
+	}
+
+	&__logo {
+		display: flex;
+		position: relative;
+		z-index: 1;
+		margin: 0 82px 0 0;
+		order: 1;
+		img {
+			&:last-child {
+				width: 111px;
+			}
+			&:first-child {
+				width: 28px;
+				margin: 0 5px 0 0;
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		order: 2;
+		align-items: center;
+	}
+	&__nav {
+		margin: 0 65px 0 -15px;
+		display: flex;
+	}
+
+	&__link {
+		padding: 0 15px;
+		font-family: "PF Din Text Cond Pro";
+		font-size: 14px;
+		line-height: 21px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+		position: relative;
+		z-index: 1;
+	}
+
+	&__right {
+		display: flex;
+	}
+
+	&__region {
+		margin: 0 30px 0 0;
+		font-family: "PF Din Text Cond Pro";
+		font-size: 14px;
+		line-height: 21px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+		position: relative;
+		z-index: 1;
+		&:before {
+			content: "";
+			background: url("../img/header/region.png") center / cover no-repeat;
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			top: 50%;
+			left: -11px;
+			transform: translate(-100%, -50%);
+		}
+	}
+
+	&__burger {
+		display: none;
+	}
+
+	@media (max-width: 970px) {
+		height: 50px;
+		&::before {
+			z-index: 3;
+		}
+		&__logo {
+			flex: 1 0 auto;
+			margin: 0;
+			z-index: 3;
+			img {
+				&:last-child {
+					width: 90px;
+					height: calc(90px * 28 / 111);
+				}
+				&:first-child {
+					width: 22px;
+					height: calc(22px * 32 / 28);
+					margin: 0 5px 0 0;
+				}
+			}
+		}
+		&__burger {
+			display: block;
+			height: 30px;
+			width: 40px;
+			order: 5;
+			position: relative;
+			z-index: 3;
+			&:before,
+			&:after {
+				content: "";
+				background: #b1905a;
+				width: 100%;
+				height: 3px;
+				position: absolute;
+				left: 0;
+				transition: all 300ms ease 0s;
+			}
+			&:before {
+				top: 0;
+			}
+			&:after {
+				bottom: 0;
+			}
+			span {
+				background: #b1905a;
+				width: 100%;
+				height: 3px;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%) scale(1);
+				transition: all 300ms ease 0s;
+			}
+			&.active {
+				span {
+					transform: scale(0.1);
+					transition: all 300ms ease 0s;
+				}
+				&::before {
+					transform: rotate(45deg);
+					top: 13.5px;
+					transition: all 300ms ease 0s;
+				}
+				&::after {
+					transform: rotate(-45deg);
+					bottom: 13.5px;
+					transition: all 300ms ease 0s;
+				}
+			}
+		}
+		&__profile {
+			margin: 0 15px 0 0;
+		}
+		&__menu {
+			flex-direction: column;
+			padding: 55px 0 20px;
+			margin: 0;
+			position: fixed;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			background: rgba(34, 44, 51, 0.95);
+			transition: top 300ms ease-in 0s;
+			&.active {
+				transition: top 300ms ease-out 0s;
+				top: 0;
+			}
+		}
+
+		&__right {
+			justify-content: space-between;
+			width: 100%;
+			padding: 0 0 0 42px;
+		}
+		&__region {
+			font-size: 20px;
+			&::before {
+				width: 20px;
+				height: 20px;
+			}
+		}
+		&__nav {
+			margin: 0;
+			flex-direction: column;
+			align-items: center;
+			flex: 1 0 auto;
+		}
+		&__link {
+			font-size: 25px;
+			line-height: 45px;
+		}
+	}
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	&__logo {
+		width: 18px;
+		margin: 0 6px 0 0;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__arrows {
+	}
+
+	&__up {
+		width: 8px;
+		height: 5px;
+		margin: 0 0 3px 0;
+	}
+
+	&__down {
+		width: 8px;
+		height: 5px;
+	}
+}
+
+// ======= Main screen ====================
+.main-screen {
+	padding: 110px 0 100px 0;
+	position: relative;
+	width: 100%;
+	flex: 0 0 500px;
+	// display: flex;
+	// align-items: center;
+	@media (max-width: 970px) {
+		padding: 85px 0 80px 0;
+	}
+	&__raw {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__background {
+		background-attachment: fixed;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	&__title {
+		text-align: center;
+		font-family: "Ceremonious One";
+		@include adaptiv-font(40, 37);
+		line-height: 25px;
+		font-weight: 400;
+		color: #bb9c66;
+		margin: 0px 0px 23px 0px;
+	}
+
+	&__subtitle {
+		text-align: center;
+		margin: 0px 0px 27px 0px;
+		font-family: "PF Din Text Cond Pro";
+		@include adaptiv-font(35, 29);
+		line-height: 35px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: #ffffff;
+	}
+
+	&__text {
+		margin: 0px 0px 58px 0px;
+		padding: 0 13%;
+		font-family: "PT Sans";
+		font-size: 15px;
+		line-height: 25px;
+		font-weight: 400;
+		color: #ffffff;
+		text-align: center;
+	}
+
+	&__link {
+		width: 250px;
+		height: 50px;
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			font-family: "Idealist Sans";
+			font-size: 15px;
+			line-height: 21px;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: #ffffff;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 100px;
+		img {
+			padding: 0 6px;
+		}
+	}
+	&__logo-background {
+		position: absolute;
+		z-index: -1;
+		background-color: white;
+		transform: rotate(45deg);
+		width: 70.71%;
+		height: 70.71%;
+	}
+}
+
+// ======== Content ======================
+
+.content {
+	padding: 75px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.lots {
+	&__popular {
+		text-align: center;
+		font-family: "Ceremonious One";
+		font-size: 40px;
+		line-height: 40px;
+		font-weight: 400;
+		color: #bb9c66;
+		margin-bottom: 27px;
+	}
+
+	&__title {
+		text-align: center;
+		font-family: "PF Din Text Cond Pro";
+		font-size: 35px;
+		line-height: 35px;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: #1c242a;
+		margin-bottom: 20px;
+	}
+
+	&__divider {
+		margin: 0 0 42px 0;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__item {
+	}
+}
+
+.clocks {
+	padding: 0 2px;
+	display: flex;
+	align-items: center;
+	&__figures {
+		position: relative;
+		&_left {
+			width: 9.6px;
+			height: 9.6px;
+			border: 1px solid #bb9c66;
+			transform: rotate(45deg);
+			margin: 0 80px 0 21px;
+			&::after {
+				content: "";
+				width: 17.6px;
+				height: 17.6px;
+				border: 1px solid #bb9c66;
+				position: absolute;
+				top: -5px;
+				right: -5px;
+				transform: translate(100%, -100%);
+			}
+			&::before {
+				content: "";
+				width: 9px;
+				height: 9px;
+				border: 1px solid #bb9c66;
+				border-radius: 50%;
+				position: absolute;
+				top: 5px;
+				left: -5px;
+				transform: translate(-75%, 55%);
+			}
+		}
+		&_right {
+			width: 10.6px;
+			height: 10.6px;
+			border: 1px solid #bb9c66;
+			transform: rotate(45deg);
+			margin: 0 21px 0 80px;
+			&::before {
+				content: "";
+				width: 17.6px;
+				height: 17.6px;
+				border: 1px solid #bb9c66;
+				position: absolute;
+				bottom: -5px;
+				left: -5px;
+				transform: translate(-100%, 100%);
+			}
+			&::after {
+				content: "";
+				width: 9px;
+				height: 9px;
+				border: 1px solid #bb9c66;
+				border-radius: 50%;
+				position: absolute;
+				bottom: 5px;
+				right: -5px;
+				transform: translate(75%, -75%);
+			}
+		}
+	}
+
+	&__staight {
+		background: #bb9c66;
+		height: 1px;
+		flex: 1 0 auto;
+	}
+
+	&__image {
+		width: 50px;
+		height: 57px;
+	}
+	@media (max-width: 570px) {
+		&__figures {
+			&_left {
+				margin: 0 40px 0 21px;
+			}
+			&_right {
+				margin: 0 21px 0 40px;
+			}
+		}
+	}
+}
+
+.item {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 0 250px;
+	&__image {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 100.4% 0 0 0;
+		margin: 0 0 30px 0;
+	}
+
+	&__title {
+		text-align: center;
+		font-family: "PF Din Text Cond Pro";
+		font-size: 21px;
+		line-height: 25px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: #000000;
+		height: 50px;
+		margin: 0 0 25px 0;
+	}
+}
+.time {
+	position: absolute;
+	top: 201px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	&__background {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		border-left: 50px solid transparent;
+		border-right: 50px solid transparent;
+		border-bottom: 51px solid white;
+	}
+
+	&__pic {
+		position: relative;
+		z-index: 1;
+		width: 12px;
+		height: 15px;
+		margin: 0 0 5px 0;
+	}
+
+	&__numbers {
+		position: relative;
+		z-index: 1;
+		font-family: "PT Sans Narrow";
+		font-size: 18px;
+		line-height: 21px;
+		font-weight: 400;
+		color: #000000;
+	}
+}
+
+.bet {
+	display: flex;
+	align-items: start;
+	width: 100%;
+	&__views {
+		flex: 0 0 50px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-bottom: 1px solid #bb9c66;
+		height: 50px;
+	}
+
+	&__picture {
+		width: 25px;
+		height: 25px;
+	}
+
+	&__number {
+		font-family: "PT Sans";
+		font-size: 14px;
+		line-height: 25px;
+		font-weight: 400;
+		color: #000000;
+	}
+
+	&__current {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// justify-content: center;
+		position: relative;
+		padding: 7px 0;
+		height: 100px;
+	}
+
+	&__background {
+		width: 70.71px;
+		height: 70.71px;
+		border: 1px solid #bb9c66;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		z-index: -1;
+	}
+
+	&__title {
+		font-family: "PT Sans";
+		font-size: 14px;
+		line-height: 12px;
+		font-weight: 400;
+		color: #000000;
+		margin: 0 0 7px 0;
+	}
+
+	&__amount {
+		font-family: "Bravo RG";
+		font-size: 50px;
+		line-height: 50px;
+		font-weight: 400;
+		color: #1c242a;
+		// margin: 0 0 8px 0;
+	}
+
+	&__currency {
+		font-family: "ALS Rubl";
+		font-size: 14px;
+	}
+}
