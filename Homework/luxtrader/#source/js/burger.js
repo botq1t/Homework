@@ -4,4 +4,8 @@ $(document).ready(function () {
 		$('.header__menu').toggleClass('active');
 		$('body').toggleClass('lock');
 	});
+
+	$('.all__title').click(function (event) {
+		$('.all__body').toggleClass('active');
+	})
 });
